@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="header" id="header">
+      <div id="container">
+        <nav class="nav navbar-nav navber-left"><!-- クラス名は手本と同じに入力 -->
+          <span>Bookers</span>
+        </nav>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+            <li class="">
+              <%= link_to 'Home', "#" %><!-- リンク先追加必要箇所 -->
+            </li>
+            <li class="">
+              <%= link_to 'User', "#" %><!-- リンク先追加必要箇所 -->
+            </li>
+            <li class="">
+              <%= link_to 'Book', "#" %><!-- リンク先追加必要箇所 -->
+            </li>
+            <li class="">
+              <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+            </li>
+            <% else %>
+            <li class="">
+              <%= link_to 'Home', "#" %><!-- リンク先追加必要箇所 -->
+            </li>
+            <li class="">
+              <%= link_to 'About', "#" %><!-- リンク先追加必要箇所 -->
+            </li>
+            <li class="">
+              <%= link_to 'sign up', new_user_registration_path %>
+            </li>
+            <li class="">
+              <%= link_to 'login', new_user_session_path %>
+            </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <%= yield %>
+    <div class="footer">
+    </div>
+  </body>
+</html>
