@@ -1,0 +1,60 @@
+<!-- http://localhost:3000 -->
+
+<div class="body">
+	<div class="conteiner">
+		<div class="row">
+			<div class="col-xs-3">
+				<h2>User into</h2>
+				<img class=""></div>
+				<table class="table">
+					<tbody>
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+					</tbody>
+				</table>
+				<div class="row">
+					<a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench">
+						<!-- edituserへ -->
+					</a>
+				</div>
+				<h2>New book</h2>
+				<%= form_for(@book) do |f| %>
+				<div class="field row">
+					<%= f.label :title %><br>
+					<%= f.text_field :title %>
+				</div>
+				<div class="area row">
+					<%= f.label :body %><br>
+					<%= f.text_area :body %>
+				</div>
+				<%= f.submit 'Create Book' %>
+				<% end %>
+			</div>
+			<div class="col-xs-9">
+				<h2>Books</h2>
+				<table class="table table-hover table-inverse">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Title</th>
+							<th>Opinion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
