@@ -15,4 +15,4 @@
 - [Update]20202/3-25  
 	user/editを形だけ作成  
 	user/showだけに【User info】画面を作成  
-	6章まで終了
+	7章まで終了  
