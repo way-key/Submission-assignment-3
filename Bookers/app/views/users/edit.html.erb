@@ -1,0 +1,29 @@
+<!-- http://localhost:3000/users/1/edit -->
+
+<div class="container">
+	<% if flash[:notice] %>
+	<div>
+		<%= flash[:notice] %>
+	</div>
+	<% end %>
+	<div class="row">
+		<h1>User info</h1>
+		<%= form_for(@user) do |f| %>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+
+			<div class="form-group has-icon">
+			    <div class="user-edit-image">
+        		<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb" %>
+    			</div>
+    		<label class="control-label sr-only" for="inputEmail">ProfileImage</label>
+    		<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+			</div>
+
+			<%= f.label :introduction %>
+			<%= f.text_area :introduction %>
+    </div>
+    <%= f.submit "Update User", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+<% end %>
+	</div>
+</div>
