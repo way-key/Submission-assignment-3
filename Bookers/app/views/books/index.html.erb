@@ -1,4 +1,4 @@
-<!-- http://localhost:3000 -->
+<!-- http://localhost:3000/ -->
 
 <% if flash[:notice] %>
 　<div>
@@ -29,18 +29,7 @@
 						<!-- edituserへ -->
 					</a>
 				</div>
-				<h2>New book</h2>
-				<%= form_for(@book) do |f| %>
-				<div class="field row">
-					<%= f.label :title %><br>
-					<%= f.text_field :title %>
-				</div>
-				<div class="area row">
-					<%= f.label :body %><br>
-					<%= f.text_area :body %>
-				</div>
-				<%= f.submit 'Create Book' %>
-				<% end %>
+				<%= render 'books/new_book', book: @book %>
 			</div>
 			<div class="col-xs-9">
 				<h2>Books</h2>

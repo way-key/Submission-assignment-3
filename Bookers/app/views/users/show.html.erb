@@ -4,27 +4,7 @@
 	<div class="conteiner">
 		<div class="row">
 			<div class="col-xs-3">
-				<h2>User into</h2>
-				<img class="">
-				<table class="table">
-					<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb" %>
-					<tbody>
-						<tr>
-							<th>name</th>
-							<th><%= @user.name %></th>
-						</tr>
-						<tr>
-							<th>introduction</th>
-							<th><%= @user.introduction %></th>
-						</tr>
-					</tbody>
-				</table>
-				<%= link_to "プロフィール編集", edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_14248" %>
-				<div class="row">
-					<a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench">
-						<!-- edituserへ -->
-					</a>
-				</div>
+				<%= render 'users/user_info', user: @user %>
 				<h2>New book</h2>
 				<div class="field row">
 				</div>
@@ -49,7 +29,7 @@
         							<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb" %>
     								</div>
 								</td>
-								<td><%= book.title %></td>
+								<td><%= link_to book.title, book_path(book) %></td>
 								<td><%= book.body %></td>
 							</tr>
 						<% end %>
