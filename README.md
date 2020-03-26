@@ -12,7 +12,12 @@
 	books(show)を形だけ作成  
 	5章の削除機能までで終了  
   
-- [Update]20202/3-25  
+- [Update]2020/3/25  
 	user/editを形だけ作成  
 	user/showだけに【User info】画面を作成  
 	7章まで終了  
+  
+- [Update]2020/3/26  
+	Boot-strapを導入  
+	ヘッダーとフッターのデザインを作成  
+	8章まで終了  
