@@ -1,13 +1,15 @@
 <!-- http://localhost:3000/users/1/edit -->
 
 <div class="container">
-	<% if flash[:notice] %>
-	<div>
-		<%= flash[:notice] %>
-	</div>
-	<% end %>
+	<br>
+	<br>
 	<div class="row">
 		<h1>User info</h1>
+		<% if flash[:notice] %>
+		<div>
+			<%= flash[:notice] %>
+		</div>
+		<% end %>
 		<%= form_for(@user) do |f| %>
 			<%= f.label :name %>
 			<%= f.text_field :name %>
@@ -23,7 +25,7 @@
 			<%= f.label :introduction %>
 			<%= f.text_area :introduction %>
     </div>
-    <%= f.submit "Update User", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+    <%= f.submit "Update User", class: "actions" %>
 <% end %>
 	</div>
 </div>

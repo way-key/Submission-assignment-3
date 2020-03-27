@@ -21,3 +21,7 @@
 	Boot-strapを導入  
 	ヘッダーとフッターのデザインを作成  
 	8章まで終了  
+- [Update]2020/3/27  
+	レイアウトをBootstrapに合わせて修正  
+	User/indexを作成  
+	※editのメッセージを再確認、userinfoとnewbookのrender方法を再確認
