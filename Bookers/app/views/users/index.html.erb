@@ -1,7 +1,7 @@
 <!-- http://localhost:3000/users -->
 
 <div class="body">
-	<div class="conteiner">
+	<div class="container">
 		<br>
 		<br>
 		<% if flash[:notice] %>
@@ -14,10 +14,20 @@
 			<div class="col-xs-3">
 				<%= render 'users/user_info', user: @user %>
 				<h2>New book</h2>
+				<%= form_for(@book) do |f| %>
 				<div class="field row">
+					<%= f.label :title %><br>
+					<%= f.text_field :title, class: "col-xs-12 book_title" %>
 				</div>
 				<div class="area row">
+					<%= f.label :Opninon %><br>
+					<%= f.text_area :body, class: "col-xs-12 book_body" %>
 				</div>
+				<div class="actions row">
+					<br>
+					<%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %>
+				</div>
+				<% end %>
 			</div>
 			<div class="col-xs-9">
 				<h2>Users</h2>
@@ -30,15 +40,17 @@
 						</tr>
 					</thead>
 					<tbody>
-						<% @users.each do |u| %>
+						<% @users.each do |user| %>
 							<tr>
 								<td>
 									<div class="user-edit-image">
-        							<%= attachment_image_tag user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb" %>
+									<% link_to book_path(user.id) do %>
+        							<%= attachment_image_tag user, :profile_image, class: "attachment user profile_image fallback", fallback: "no_image.jpg" %>
+        							<% end %>
     								</div>
 								</td>
-								<td><%= u.name %></td>
-								<td><%= Link_to "Show", user_path(u) %></td>
+								<td><%= user.name %></td>
+								<td><%= link_to "Show", book_path(user.id) %></td>
 							</tr>
 						<% end %>
 					</tbody>

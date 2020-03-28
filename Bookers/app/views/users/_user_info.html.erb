@@ -1,5 +1,5 @@
 <h2>User into</h2>
-<%= attachment_image_tag user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb" %>
+<%= attachment_image_tag user, :profile_image, class: "attachment user profile_image fallback", fallback: "no_image.jpg" %>
 <table class="table">
 	<tbody>
 		<tr>
@@ -13,5 +13,7 @@
 	</tbody>
 </table>
 <div class="row">
-<%= link_to "プロフィール編集", edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_14248" %>
+	<% if user == current_user.id %>
+		<%= link_to "プロフィール編集", edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_14248" %>
+	<% end %>
 </div>

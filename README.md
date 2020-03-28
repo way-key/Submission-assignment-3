@@ -24,4 +24,6 @@
 - [Update]2020/3/27  
 	レイアウトをBootstrapに合わせて修正  
 	User/indexを作成  
-	※editのメッセージを再確認、userinfoとnewbookのrender方法を再確認
+	※editのメッセージを再確認、userinfoとnewbookのrender方法を再確認  
+- [Update]2020/3/28  
+	Respecによるテスト(残り24項目)  
