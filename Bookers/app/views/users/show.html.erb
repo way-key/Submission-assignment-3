@@ -31,12 +31,12 @@
 							<tr>
 								<td>
 									<div class="user-edit-image">
-										<%= attachment_image_tag @user, :profile_image, class: "attachment user profile_image fallback", fallback: "no_image.jpg" %>
+										<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "attachment user profile_image", fallback: "no_image.jpg" %>
     								</div>
 								</td>
 								<td>
 									<%if @user == current_user %>
-										<%= link_to book.title, book_path(book) %>
+										<%= link_to book.title, book_path(book.id) %>
 									<% else %>
 										<%= link_to book.title, "#" %>
 									<% end %>

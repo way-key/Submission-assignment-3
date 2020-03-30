@@ -1,19 +1,19 @@
 <!-- http://localhost:3000/books/#/edit -->
 
 <div class="container">
-<br>
-<br>
-<% if flash[:notice] %>
-　<div>
-	<%= flash[:notice] %>
-　</div>
-<% end %>
+	<br>
+	<br>
+	<% if flash[:notice] %>
+　	<div>
+		<%= flash[:notice] %>
+　	</div>
+	<% end %>
 
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<h1>Editing Book</h1>
+			<%= form_for(@book) do |f| %>
 			<div class="field row">
-				<%= form_for(@book) do |f| %>
 				<%= f.label :title %><br>
 				<%= f.text_field :title, class: "col-xs-12 book_title" %>
 			</div>
@@ -22,11 +22,10 @@
 				<%= f.text_area :body, class: "col-xs-12 book_body" %>
 			</div>
 			<div class="actions row">
-			<br>
-			<%= f.submit 'Update book', class: "btn btn-primary col-xs-12" %>
-			<% end %>
+				<%= f.submit 'Update Book', class: "btn btn-primary col-xs-12" %>
+				<%= link_to "Show", book_path(@book) %>|<%= link_to "Back", books_path %>
 			</div>
-			<br>
-			<%= link_to "Show", book_path(@book) %>|<%= link_to "Back", books_path %>
+			<% end %>
+		</div>
 	</div>
 </div>

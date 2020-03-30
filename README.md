@@ -27,3 +27,6 @@
 	※editのメッセージを再確認、userinfoとnewbookのrender方法を再確認  
 - [Update]2020/3/28  
 	Respecによるテスト(残り24項目)  
+- [Update]2020/3/29  
+	Respecによるテスト(残り1項目)  
+- [finish]2020/3/30  

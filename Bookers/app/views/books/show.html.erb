@@ -24,14 +24,17 @@
 							<td>
 								<td>
 									<div class="user-edit-image">
-										<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb" %>
+										<%= link_to user_path(@user.id) do %>
+											<%= attachment_image_tag @user, :profile_image, :fill, 50, 50, class: "attachment user profile_image", fallback: "no_image.jpg", size: "50x50" %><br>
+											<%= @user.name %>
+										<% end %>
     								</div>
 								</td>
 							</td>
-							<td><%= @booka.title %></td>
+							<td><%= link_to @booka.title, user_path(@user.id) %></td>
 							<td><%= @booka.body %></td>
 							<% if @booka.user == current_user %>
-							<td><%= link_to "edit", edit_book_path(@booka), class: "btn-sm btn-success edit_book_23440" %></td>
+							<td><%= link_to "Edit", edit_book_path(@booka), class: "btn-sm btn-success edit_book_23440" %></td>
 							<td><%= link_to "Destroy", book_path(@booka), method: :delete, data: {confirm: "Are you sure?"}, class: "btn-sm btn-danger destroy_book_23440" %></td>
 							<% end %>
 						</tr>
